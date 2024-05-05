@@ -1,1 +1,0 @@
-export  const API_URL = process.env.services__apiservice__http__0

@@ -5,24 +5,24 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:17278;http://localhost:15232",
+      "applicationUrl": "https://localhost:17245;http://localhost:15007",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DOTNET_ENVIRONMENT": "Development",
-        "DOTNET_DASHBOARD_OTLP_ENDPOINT_URL": "https://localhost:21290",
-        "DOTNET_RESOURCE_SERVICE_ENDPOINT_URL": "https://localhost:22149"
+        "DOTNET_DASHBOARD_OTLP_ENDPOINT_URL": "https://localhost:21060",
+        "DOTNET_RESOURCE_SERVICE_ENDPOINT_URL": "https://localhost:22084"
       }
     },
     "http": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:15232",
+      "applicationUrl": "http://localhost:15007",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DOTNET_ENVIRONMENT": "Development",
-        "DOTNET_DASHBOARD_OTLP_ENDPOINT_URL": "http://localhost:19168",
-        "DOTNET_RESOURCE_SERVICE_ENDPOINT_URL": "http://localhost:20071"
+        "DOTNET_DASHBOARD_OTLP_ENDPOINT_URL": "http://localhost:19185",
+        "DOTNET_RESOURCE_SERVICE_ENDPOINT_URL": "http://localhost:20007"
       }
     }
   }
