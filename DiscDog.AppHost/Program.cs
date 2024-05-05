@@ -1,9 +1,18 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var apiService = builder.AddProject<Projects.DiscDog_ApiService>("apiservice");
+var cache = builder.AddRedis("redis");
+var db = builder
+    .AddPostgres("DiscDog")
+    .WithPgAdmin()
+    .AddDatabase("DiscDogDb");
+    
 
-builder.AddProject<Projects.DiscDog_Web>("webfrontend")
+var apiService = builder.AddProject<Projects.DiscDog_ApiService>("api")
+    .WithReference(db);
+
+builder.AddProject<Projects.DiscDog_Web>("web")
     .WithExternalHttpEndpoints()
-    .WithReference(apiService);
+    .WithReference(apiService)
+    .WithReference(cache);
 
 builder.Build().Run();
