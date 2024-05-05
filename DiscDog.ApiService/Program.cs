@@ -16,6 +16,17 @@ var summaries = new[]
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
+app.MapGet("/club/{id}/teams", (int id) => {
+    return new[] {
+        new { Id = 1, Person = "Team 1", Dog = "Dog 1"},
+        new { Id = 2, Person = "Team 2", Dog = "Dog 2"},
+        new { Id = 3, Person = "Team 3", Dog = "Dog 3"},
+    };
+});
+
+
+
+
 app.MapGet("/weatherforecast", () =>
 {
     var forecast = Enumerable.Range(1, 10).Select(index =>
@@ -37,3 +48,5 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
+
+record Team(int id, string Person, string Dog);

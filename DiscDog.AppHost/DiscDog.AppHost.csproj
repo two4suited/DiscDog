@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DiscDog.ApiService\DiscDog.ApiService.csproj" />
-    <ProjectReference Include="..\DiscDog.Web\DiscDog.Web.csproj" />
+ 
   </ItemGroup>
 
   <ItemGroup>

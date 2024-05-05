@@ -10,11 +10,4 @@ builder.AddNpmApp("nextjs","../DiscDog.Web.NextJS","dev")
     .WithHttpEndpoint(env: "PORT")
     .WithExternalHttpEndpoints();
 
-  
-
-
-builder.AddProject<Projects.DiscDog_Web>("webfrontend")
-    .WithExternalHttpEndpoints()
-    .WithReference(apiService);
-
 builder.Build().Run();
