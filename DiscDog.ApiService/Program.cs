@@ -28,10 +28,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-var clubApis = app.MapGroup("/club").WithOpenApi();
+app.RegisterClubEndpoints();
 
-clubApis.MapGet("/", ClubAPI.GetClubs).WithName("GetClubs");
-clubApis.MapGet("/{id}/teams", ClubAPI.GetTeams).WithName("GetTeams");
 
 app.MapDefaultEndpoints();
 
