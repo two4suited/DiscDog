@@ -29,6 +29,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.RegisterClubEndpoints();
+app.RegisterTeamEndpoints();
 
 
 app.MapDefaultEndpoints();
