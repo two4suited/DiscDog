@@ -11,9 +11,9 @@ public class ClubService
         this.dbContext = dbContext;
         dbContext.Database.EnsureCreated();
     }
-    public List<ClubView> GetClubs()
+    public async Task<List<ClubView>> GetClubs()
     {
-        return dbContext.Clubs.Select(c => new ClubView{ Id = c.Id, Name = c.Name }).ToList();
+        return await dbContext.Clubs.Select(c => new ClubView{ Id = c.Id, Name = c.Name }).ToListAsync();
     }
 }
 

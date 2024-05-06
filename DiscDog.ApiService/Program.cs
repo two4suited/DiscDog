@@ -16,8 +16,6 @@ builder.Services.AddProblemDetails();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
-
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options => options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 var app = builder.Build();
@@ -30,43 +28,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+var clubApis = app.MapGroup("/club").WithOpenApi();
 
-app.MapGet("/club", (ClubService clubService) =>
-    {
-        var clubs = clubService.GetClubs();
-        return clubs is not null ? Results.Ok(clubs) : Results.NotFound();
-    })
-    .WithName("GetClubs")
-    .WithOpenApi();
-
-app.MapGet("/club/{id}/teams", (TeamService teamService,string id) =>
-{
-    var teams = teamService.GetTeams(Guid.Parse(id));
-    return teams is not null ? Results.Ok(teams) : Results.NotFound();
-});
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-});
+clubApis.MapGet("/", ClubAPI.GetClubs).WithName("GetClubs");
+clubApis.MapGet("/{id}/teams", ClubAPI.GetTeams).WithName("GetTeams");
 
 app.MapDefaultEndpoints();
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

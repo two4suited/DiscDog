@@ -1,11 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace DiscDog.ApiService;
 
 public class TeamService(DiscDogDbContext context)
 {
     //Get all teams by clubid
-    public List<TeamView> GetTeams(Guid clubId)
+    public async Task<List<TeamView>> GetTeams(Guid clubId)
     {
-        return [.. context.Teams.Where(t => t.ClubId == clubId).Select(t => new TeamView { Dog = t.Dog, Id= t.Id, Person = t.Person})];
+        return await context.Teams.Where(t => t.ClubId == clubId).Select(t => new TeamView { Dog = t.Dog, Id= t.Id, Person = t.Person}).ToListAsync();
     }
 }
 
