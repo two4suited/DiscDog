@@ -398,3 +398,12 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+DiscDog.ServiceDefaults/obj/DiscDog.ServiceDefaults.csproj.nuget.dgspec.json
+DiscDog.ServiceDefaults/obj/DiscDog.ServiceDefaults.csproj.nuget.dgspec.json
+DiscDog.ServiceDefaults/obj/DiscDog.ServiceDefaults.csproj.nuget.g.props
+DiscDog.ServiceDefaults/obj/project.assets.json
+DiscDog.ServiceDefaults/obj/project.nuget.cache
+DiscDog.Web/obj/DiscDog.Web.csproj.nuget.dgspec.json
+DiscDog.Web/obj/DiscDog.Web.csproj.nuget.g.props
+DiscDog.Web/obj/project.assets.json
+DiscDog.Web/obj/project.nuget.cache
