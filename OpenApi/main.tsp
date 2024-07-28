@@ -1,9 +1,8 @@
 import "@typespec/http";
 import "@typespec/rest";
 import "@typespec/openapi3";
-import "./endpoints/club.tsp";
-import "./endpoints/team.tsp";
-import "./endpoints/seasons.tsp";
+import "./endpoints/import.tsp";
+
 
 using TypeSpec.Http;
 using TypeSpec.Rest;
@@ -27,5 +26,15 @@ interface TeamRoutes extends TeamEndpoints {}
 @tag("Seasons")
 interface SeasonRoutes extends SeasonEndpoints {}
 
+@route("lineup")
+@tag("Lineups")
+interface LineupRoutes extends LineupEndpoints {}
 
+@route("run")
+@tag("Runs")
+interface RunRoutes extends RunEndpoints {}
+
+@route("week")
+@tag("Weeks")
+interface WeekRoutes extends WeekEndpoints {}
 

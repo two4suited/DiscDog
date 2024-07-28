@@ -52,4 +52,14 @@ interface ResourceOperations<T,U> {
     @statusCode statusCode: 500;
     @body error: InternalServerError;
   };
+  @delete
+  op Delete(@path id: string): {
+    @statusCode statusCode: 204;
+  } | {
+    @statusCode statusCode: 404;
+    @body error: NotFoundError;
+  } | {
+    @statusCode statusCode: 500;
+    @body error: InternalServerError;
+  };
 }
