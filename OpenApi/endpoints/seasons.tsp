@@ -1,6 +1,8 @@
 import "./operations.tsp";
 
-interface SeasonEndpoints extends ResourceOperations<Season, CreateSeason> {}
+using ResourceOperations;
+
+interface SeasonEndpoints {}
 
 model Season {
   id: string;

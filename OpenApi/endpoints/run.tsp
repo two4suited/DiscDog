@@ -1,6 +1,8 @@
 import "./operations.tsp";
 
-interface RunEndpoints extends ResourceOperations<Run, CreateRun> {}
+using ResourceOperations;
+
+interface RunEndpoints  {}
 
 model Run extends CreateRun {
   id: string;

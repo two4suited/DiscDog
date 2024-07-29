@@ -1,4 +1,16 @@
-interface TeamEndpoints extends ResourceOperations<Team, CreateTeam> {}
+import "./operations.tsp";
+
+using ResourceOperations;
+
+
+interface TeamEndpoints{
+  getTeams is GetAll<Team>;
+  getTeamById is GetById<Team>;
+  createTeam is Create<CreateTeam, Team>;
+  updateTeam is Update<CreateTeam,Team>;
+  deleteTeam is Delete;
+
+}
 
 model Team {
   id: string;

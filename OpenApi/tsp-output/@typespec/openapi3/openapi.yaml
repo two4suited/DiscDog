@@ -5,16 +5,13 @@ info:
 tags:
   - name: Clubs
   - name: Teams
-  - name: Seasons
   - name: Lineups
-  - name: Runs
-  - name: Weeks
 paths:
   /club:
     get:
       tags:
         - Clubs
-      operationId: ClubRoutes_GetAll
+      operationId: ClubRoutes_getClubs
       parameters: []
       responses:
         '200':
@@ -40,7 +37,7 @@ paths:
     post:
       tags:
         - Clubs
-      operationId: ClubRoutes_Create
+      operationId: ClubRoutes_createClub
       parameters: []
       responses:
         '201':
@@ -48,7 +45,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateClub'
+                $ref: '#/components/schemas/Club'
         '400':
           description: The server could not understand the request due to invalid syntax.
           content:
@@ -66,42 +63,12 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Club'
-    put:
-      tags:
-        - Clubs
-      operationId: ClubRoutes_Update
-      parameters: []
-      responses:
-        '201':
-          description: The request has succeeded and a new resource has been created as a result.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreateClub'
-        '400':
-          description: The server could not understand the request due to invalid syntax.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Club'
+              $ref: '#/components/schemas/CreateClub'
   /club/{id}:
     get:
       tags:
         - Clubs
-      operationId: ClubRoutes_GetById
+      operationId: ClubRoutes_getClubById
       parameters:
         - name: id
           in: path
@@ -127,10 +94,45 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
+    put:
+      tags:
+        - Clubs
+      operationId: ClubRoutes_updateClub
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: The request has succeeded and a new resource has been created as a result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Club'
+        '400':
+          description: The server could not understand the request due to invalid syntax.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateClub'
     delete:
       tags:
         - Clubs
-      operationId: ClubRoutes_Delete
+      operationId: ClubRoutes_deleteClub
       parameters:
         - name: id
           in: path
@@ -153,36 +155,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
   /lineup:
-    get:
-      tags:
-        - Lineups
-      operationId: LineupRoutes_GetAll
-      parameters: []
-      responses:
-        '200':
-          description: The request has succeeded.
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Lineup'
-        '404':
-          description: The server cannot find the requested resource.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
     post:
       tags:
         - Lineups
-      operationId: LineupRoutes_Create
+      operationId: LineupRoutes_createLineup
       parameters: []
       responses:
         '201':
@@ -190,7 +166,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateLineup'
+                $ref: '#/components/schemas/Lineup'
         '400':
           description: The server could not understand the request due to invalid syntax.
           content:
@@ -208,42 +184,12 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Lineup'
-    put:
-      tags:
-        - Lineups
-      operationId: LineupRoutes_Update
-      parameters: []
-      responses:
-        '201':
-          description: The request has succeeded and a new resource has been created as a result.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreateLineup'
-        '400':
-          description: The server could not understand the request due to invalid syntax.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Lineup'
+              $ref: '#/components/schemas/CreateLineup'
   /lineup/{id}:
     get:
       tags:
         - Lineups
-      operationId: LineupRoutes_GetById
+      operationId: LineupRoutes_getLineupById
       parameters:
         - name: id
           in: path
@@ -269,10 +215,45 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
+    put:
+      tags:
+        - Lineups
+      operationId: LineupRoutes_updateLineup
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: The request has succeeded and a new resource has been created as a result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Lineup'
+        '400':
+          description: The server could not understand the request due to invalid syntax.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateLineup'
     delete:
       tags:
         - Lineups
-      operationId: LineupRoutes_Delete
+      operationId: LineupRoutes_deleteLineup
       parameters:
         - name: id
           in: path
@@ -294,12 +275,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
-  /run:
+  /lineup/{seasonId}/{weekId}:
     get:
       tags:
-        - Runs
-      operationId: RunRoutes_GetAll
-      parameters: []
+        - Lineups
+      operationId: LineupRoutes_getLineupsBySeasonAndWeek
+      parameters:
+        - name: seasonId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: weekId
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -308,264 +299,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Run'
-        '404':
-          description: The server cannot find the requested resource.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-    post:
-      tags:
-        - Runs
-      operationId: RunRoutes_Create
-      parameters: []
-      responses:
-        '201':
-          description: The request has succeeded and a new resource has been created as a result.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreateRun'
-        '400':
-          description: The server could not understand the request due to invalid syntax.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Run'
-    put:
-      tags:
-        - Runs
-      operationId: RunRoutes_Update
-      parameters: []
-      responses:
-        '201':
-          description: The request has succeeded and a new resource has been created as a result.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreateRun'
-        '400':
-          description: The server could not understand the request due to invalid syntax.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Run'
-  /run/{id}:
-    get:
-      tags:
-        - Runs
-      operationId: RunRoutes_GetById
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: The request has succeeded.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Run'
-        '404':
-          description: The server cannot find the requested resource.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-    delete:
-      tags:
-        - Runs
-      operationId: RunRoutes_Delete
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '204':
-          description: 'There is no content to send for this request, but the headers may be useful. '
-        '404':
-          description: The server cannot find the requested resource.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-  /season:
-    get:
-      tags:
-        - Seasons
-      operationId: SeasonRoutes_GetAll
-      parameters: []
-      responses:
-        '200':
-          description: The request has succeeded.
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Season'
-        '404':
-          description: The server cannot find the requested resource.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-    post:
-      tags:
-        - Seasons
-      operationId: SeasonRoutes_Create
-      parameters: []
-      responses:
-        '201':
-          description: The request has succeeded and a new resource has been created as a result.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreateSeason'
-        '400':
-          description: The server could not understand the request due to invalid syntax.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Season'
-    put:
-      tags:
-        - Seasons
-      operationId: SeasonRoutes_Update
-      parameters: []
-      responses:
-        '201':
-          description: The request has succeeded and a new resource has been created as a result.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreateSeason'
-        '400':
-          description: The server could not understand the request due to invalid syntax.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Season'
-  /season/{id}:
-    get:
-      tags:
-        - Seasons
-      operationId: SeasonRoutes_GetById
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: The request has succeeded.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Season'
-        '404':
-          description: The server cannot find the requested resource.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-    delete:
-      tags:
-        - Seasons
-      operationId: SeasonRoutes_Delete
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '204':
-          description: 'There is no content to send for this request, but the headers may be useful. '
+                  $ref: '#/components/schemas/Lineup'
         '404':
           description: The server cannot find the requested resource.
           content:
@@ -582,7 +316,7 @@ paths:
     get:
       tags:
         - Teams
-      operationId: TeamRoutes_GetAll
+      operationId: TeamRoutes_getTeams
       parameters: []
       responses:
         '200':
@@ -608,7 +342,7 @@ paths:
     post:
       tags:
         - Teams
-      operationId: TeamRoutes_Create
+      operationId: TeamRoutes_createTeam
       parameters: []
       responses:
         '201':
@@ -616,7 +350,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateTeam'
+                $ref: '#/components/schemas/Team'
         '400':
           description: The server could not understand the request due to invalid syntax.
           content:
@@ -634,42 +368,12 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Team'
-    put:
-      tags:
-        - Teams
-      operationId: TeamRoutes_Update
-      parameters: []
-      responses:
-        '201':
-          description: The request has succeeded and a new resource has been created as a result.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreateTeam'
-        '400':
-          description: The server could not understand the request due to invalid syntax.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Team'
+              $ref: '#/components/schemas/CreateTeam'
   /team/{id}:
     get:
       tags:
         - Teams
-      operationId: TeamRoutes_GetById
+      operationId: TeamRoutes_getTeamById
       parameters:
         - name: id
           in: path
@@ -695,152 +399,45 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
+    put:
+      tags:
+        - Teams
+      operationId: TeamRoutes_updateTeam
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: The request has succeeded and a new resource has been created as a result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Team'
+        '400':
+          description: The server could not understand the request due to invalid syntax.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTeam'
     delete:
       tags:
         - Teams
-      operationId: TeamRoutes_Delete
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '204':
-          description: 'There is no content to send for this request, but the headers may be useful. '
-        '404':
-          description: The server cannot find the requested resource.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-  /week:
-    get:
-      tags:
-        - Weeks
-      operationId: WeekRoutes_GetAll
-      parameters: []
-      responses:
-        '200':
-          description: The request has succeeded.
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Week'
-        '404':
-          description: The server cannot find the requested resource.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-    post:
-      tags:
-        - Weeks
-      operationId: WeekRoutes_Create
-      parameters: []
-      responses:
-        '201':
-          description: The request has succeeded and a new resource has been created as a result.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreateWeek'
-        '400':
-          description: The server could not understand the request due to invalid syntax.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Week'
-    put:
-      tags:
-        - Weeks
-      operationId: WeekRoutes_Update
-      parameters: []
-      responses:
-        '201':
-          description: The request has succeeded and a new resource has been created as a result.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreateWeek'
-        '400':
-          description: The server could not understand the request due to invalid syntax.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Week'
-  /week/{id}:
-    get:
-      tags:
-        - Weeks
-      operationId: WeekRoutes_GetById
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: The request has succeeded.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Week'
-        '404':
-          description: The server cannot find the requested resource.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-        '500':
-          description: Server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-    delete:
-      tags:
-        - Weeks
-      operationId: WeekRoutes_Delete
+      operationId: TeamRoutes_deleteTeam
       parameters:
         - name: id
           in: path
@@ -892,52 +489,18 @@ components:
       required:
         - order
         - teamid
+        - seasonId
+        - weekId
       properties:
         order:
           type: integer
           format: int16
         teamid:
           type: string
-    CreateRun:
-      type: object
-      required:
-        - weekId
-        - seasonId
-        - clubId
-        - scores
-        - teamid
-      properties:
-        weekId:
-          type: string
         seasonId:
           type: string
-        clubId:
+        weekId:
           type: string
-        scores:
-          type: array
-          items:
-            type: number
-            format: decimal
-        teamid:
-          type: string
-    CreateSeason:
-      type: object
-      required:
-        - name
-        - description
-        - StartDate
-        - EndDate
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-        StartDate:
-          type: string
-          format: date
-        EndDate:
-          type: string
-          format: date
     CreateTeam:
       type: object
       required:
@@ -948,20 +511,6 @@ components:
         name:
           type: string
         description:
-          type: string
-        clubId:
-          type: string
-    CreateWeek:
-      type: object
-      required:
-        - weekNumber
-        - seasonId
-        - clubId
-      properties:
-        weekNumber:
-          type: integer
-          format: int16
-        seasonId:
           type: string
         clubId:
           type: string
@@ -998,36 +547,6 @@ components:
             - NOT_FOUND
         message:
           type: string
-    Run:
-      type: object
-      required:
-        - id
-      properties:
-        id:
-          type: string
-      allOf:
-        - $ref: '#/components/schemas/CreateRun'
-    Season:
-      type: object
-      required:
-        - id
-        - name
-        - description
-        - StartDate
-        - EndDate
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        StartDate:
-          type: string
-          format: date
-        EndDate:
-          type: string
-          format: date
     Team:
       type: object
       required:
@@ -1061,15 +580,6 @@ components:
           type: array
           items:
             type: string
-    Week:
-      type: object
-      required:
-        - id
-      properties:
-        id:
-          type: string
-      allOf:
-        - $ref: '#/components/schemas/CreateWeek'
 servers:
   - url: https://discdog.wiremockapi.cloud/
     description: Disc Dog API

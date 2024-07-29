@@ -9,8 +9,8 @@ using TypeSpec.Http;
 using TypeSpec.Rest;
 using TypeSpec.Versioning;
 
-interface ResourceOperations<T,U> {
-  op GetAll(): {
+namespace ResourceOperations {
+  op GetAll<T>(): {
     @statusCode statusCode: 200;
     @body items: T[];
   } | {
@@ -20,7 +20,7 @@ interface ResourceOperations<T,U> {
     @statusCode statusCode: 500;
     @body error: InternalServerError;
   };
-  op GetById(@path id: string): {
+  op GetById<T>(@path id: string): {
     @statusCode statusCode: 200;
     @body items: T;
   } | {
@@ -31,7 +31,7 @@ interface ResourceOperations<T,U> {
     @body error: InternalServerError;
   };
   @post
-  op Create(@body club: T): {
+  op Create<T,U>(@body club: T): {
     @statusCode statusCode: 201;
     @body club: U;
   } | {
@@ -42,7 +42,7 @@ interface ResourceOperations<T,U> {
     @body error: InternalServerError;
   };
   @put
-  op Update(@body pet: T): {
+  op Update<T,U>(@path id: string,@body pet: T): {
     @statusCode statusCode: 201;
     @body pet: U;
   } | {

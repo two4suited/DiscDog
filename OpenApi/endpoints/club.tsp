@@ -1,6 +1,14 @@
 import "./operations.tsp";
 
-interface ClubEndpoints extends ResourceOperations<Club, CreateClub> {}
+using ResourceOperations;
+
+interface ClubEndpoints  {
+  getClubs is GetAll<Club>;
+  getClubById is GetById<Club>;
+  createClub is Create<CreateClub, Club>;
+  updateClub is Update<CreateClub,Club>;
+  deleteClub is Delete;
+}
 
 model Club {
   id: string;
