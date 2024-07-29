@@ -13,3 +13,7 @@ model InternalServerError {
   code: "INTERNAL_SERVER_ERROR";
   message: string;
 }
+model BadRequest {
+  code: "BAD_REQUEST";
+  message: string;
+}
