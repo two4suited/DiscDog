@@ -407,3 +407,4 @@ DiscDog.Web/obj/DiscDog.Web.csproj.nuget.dgspec.json
 DiscDog.Web/obj/DiscDog.Web.csproj.nuget.g.props
 DiscDog.Web/obj/project.assets.json
 DiscDog.Web/obj/project.nuget.cache
+.DS_Store
