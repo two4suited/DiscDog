@@ -1,0 +1,61 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.0.0
+MinimumVisualStudioVersion = 17.8.0.0
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscDog.AppHost", "src\DiscDog.AppHost\DiscDog.AppHost.csproj", "{4E72BB1A-5FC0-4EE9-950F-1246887EA1CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscDog.ServiceDefaults", "src\DiscDog.ServiceDefaults\DiscDog.ServiceDefaults.csproj", "{295CC12B-274E-4936-8D31-CE580BA3AE53}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscDog.ApiService", "src\DiscDog.ApiService\DiscDog.ApiService.csproj", "{1E792904-12EC-4A8F-BA95-0064763C0778}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscDog.Web", "src\DiscDog.Web\DiscDog.Web.csproj", "{749B0CAF-A89E-4863-A6EA-99DE468A6FD1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0EB201A2-DC0A-4BBF-81A1-5DC7538D709C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscDog.Tests", "tests\DiscDog.Tests\DiscDog.Tests.csproj", "{4EA63F67-5B29-4248-BF70-0884523CD20F}"
+EndProject
+
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscDog.Data", "src\DiscDog.Data\DiscDog.Data.csproj", "{DAD1775E-76D4-40F5-8DA1-942A3249CD9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E72BB1A-5FC0-4EE9-950F-1246887EA1CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E72BB1A-5FC0-4EE9-950F-1246887EA1CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E72BB1A-5FC0-4EE9-950F-1246887EA1CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E72BB1A-5FC0-4EE9-950F-1246887EA1CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{295CC12B-274E-4936-8D31-CE580BA3AE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{295CC12B-274E-4936-8D31-CE580BA3AE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{295CC12B-274E-4936-8D31-CE580BA3AE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{295CC12B-274E-4936-8D31-CE580BA3AE53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E792904-12EC-4A8F-BA95-0064763C0778}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E792904-12EC-4A8F-BA95-0064763C0778}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E792904-12EC-4A8F-BA95-0064763C0778}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E792904-12EC-4A8F-BA95-0064763C0778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{749B0CAF-A89E-4863-A6EA-99DE468A6FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{749B0CAF-A89E-4863-A6EA-99DE468A6FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{749B0CAF-A89E-4863-A6EA-99DE468A6FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{749B0CAF-A89E-4863-A6EA-99DE468A6FD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA63F67-5B29-4248-BF70-0884523CD20F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA63F67-5B29-4248-BF70-0884523CD20F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA63F67-5B29-4248-BF70-0884523CD20F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA63F67-5B29-4248-BF70-0884523CD20F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAD1775E-76D4-40F5-8DA1-942A3249CD9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD1775E-76D4-40F5-8DA1-942A3249CD9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAD1775E-76D4-40F5-8DA1-942A3249CD9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAD1775E-76D4-40F5-8DA1-942A3249CD9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {579DBF28-09C8-4551-BBC6-10112E8EBC03}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4EA63F67-5B29-4248-BF70-0884523CD20F} = {0EB201A2-DC0A-4BBF-81A1-5DC7538D709C}
+		{DAD1775E-76D4-40F5-8DA1-942A3249CD9D} = {C2BA8D0C-1AA8-4D62-A590-DB4E38E64720}
+	EndGlobalSection
+EndGlobal
