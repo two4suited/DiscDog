@@ -1,0 +1,30 @@
+{
+  "descriptionHash": "625A56C0C96A8A9FD3F02C6BD21888EE31E8A9CAD2328E7E02FA82ADAB9D3434028437534FA3F043B7A256B967EE6E48A4D59FD1B262923D8DADEE22C1E08325",
+  "descriptionLocation": "../../../OpenApi/output/openapi3.yaml",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.17.0",
+  "clientClassName": "DiscDogClient",
+  "clientNamespaceName": "DiscDog.Client",
+  "language": "CSharp",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": false,
+  "includeAdditionalData": true,
+  "disableSSLValidation": false,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}
