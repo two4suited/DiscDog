@@ -15,7 +15,7 @@ namespace DiscDog.Client.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code property</summary>
-        public int? Code { get; set; }
+        public double? Code { get; set; }
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>
@@ -43,7 +43,7 @@ namespace DiscDog.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetIntValue(); } },
+                { "code", n => { Code = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace DiscDog.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("code", Code);
+            writer.WriteDoubleValue("code", Code);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

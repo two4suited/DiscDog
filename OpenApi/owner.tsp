@@ -1,7 +1,11 @@
 // File: owner.tsp
+import "@typespec/rest";
 import "./error.tsp";
 
+using TypeSpec.Rest;
+
 model Owner {
+    @segment("owner")
     @key
     id: string;
     name: string;
