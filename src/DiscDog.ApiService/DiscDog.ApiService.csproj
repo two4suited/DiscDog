@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DiscDog.ServiceDefaults\DiscDog.ServiceDefaults.csproj" />
     <ProjectReference Include="..\DiscDog.Data\DiscDog.Data.csproj" />
+    <ProjectReference Include="..\DiscDog.ServiceDefaults\DiscDog.ServiceDefaults.csproj" />
   </ItemGroup>
 
   <ItemGroup>
