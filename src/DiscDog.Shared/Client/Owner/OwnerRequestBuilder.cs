@@ -12,12 +12,12 @@ using System;
 namespace DiscDog.Client.Owner
 {
     /// <summary>
-    /// Builds and executes requests for operations under \owner
+    /// Builds and executes requests for operations under \Owner
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class OwnerRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the DiscDog.Client.owner.item collection</summary>
+        /// <summary>Gets an item from the DiscDog.Client.Owner.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DiscDog.Client.Owner.Item.OwnerItemRequestBuilder"/></returns>
         public global::DiscDog.Client.Owner.Item.OwnerItemRequestBuilder this[string position]
@@ -34,7 +34,7 @@ namespace DiscDog.Client.Owner
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OwnerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/owner", pathParameters)
+        public OwnerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Owner", pathParameters)
         {
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace DiscDog.Client.Owner
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OwnerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/owner", rawUrl)
+        public OwnerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Owner", rawUrl)
         {
         }
         /// <summary>

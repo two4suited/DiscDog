@@ -19,12 +19,12 @@ namespace DiscDog.Client
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class DiscDogClient : BaseRequestBuilder
     {
-        /// <summary>The dog property</summary>
+        /// <summary>The Dog property</summary>
         public global::DiscDog.Client.Dog.DogRequestBuilder Dog
         {
             get => new global::DiscDog.Client.Dog.DogRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The owner property</summary>
+        /// <summary>The Owner property</summary>
         public global::DiscDog.Client.Owner.OwnerRequestBuilder Owner
         {
             get => new global::DiscDog.Client.Owner.OwnerRequestBuilder(PathParameters, RequestAdapter);

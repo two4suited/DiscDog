@@ -3,12 +3,12 @@ info:
   title: Disc Dog
   version: 0.0.0
 tags:
-  - name: owner
-  - name: dog
+  - name: Owner
+  - name: Dog
 paths:
-  /dog:
+  /Dog:
     post:
-      operationId: dog_create
+      operationId: DogResources_create
       description: Creates a new instance of the resource.
       parameters: []
       responses:
@@ -31,7 +31,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
       tags:
-        - dog
+        - Dog
       requestBody:
         required: true
         content:
@@ -39,7 +39,7 @@ paths:
             schema:
               $ref: '#/components/schemas/DogCreate'
     get:
-      operationId: dog_list
+      operationId: DogResources_list
       description: Lists all instances of the resource.
       parameters: []
       responses:
@@ -56,10 +56,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
       tags:
-        - dog
-  /dog/{id}:
+        - Dog
+  /Dog/{id}:
     get:
-      operationId: dog_get
+      operationId: DogResources_get
       description: Gets an instance of the resource.
       parameters:
         - $ref: '#/components/parameters/DogKey'
@@ -77,9 +77,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
       tags:
-        - dog
+        - Dog
     patch:
-      operationId: dog_update
+      operationId: DogResources_update
       description: Updates an existing instance of the resource.
       parameters:
         - $ref: '#/components/parameters/DogKey'
@@ -97,7 +97,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
       tags:
-        - dog
+        - Dog
       requestBody:
         required: true
         content:
@@ -105,7 +105,7 @@ paths:
             schema:
               $ref: '#/components/schemas/DogUpdate'
     delete:
-      operationId: dog_delete
+      operationId: DogResources_delete
       description: Deletes an existing instance of the resource.
       parameters:
         - $ref: '#/components/parameters/DogKey'
@@ -119,10 +119,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
       tags:
-        - dog
-  /owner:
+        - Dog
+  /Owner:
     post:
-      operationId: owner_create
+      operationId: OwnerResources_create
       description: Creates a new instance of the resource.
       parameters: []
       responses:
@@ -145,7 +145,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
       tags:
-        - owner
+        - Owner
       requestBody:
         required: true
         content:
@@ -153,7 +153,7 @@ paths:
             schema:
               $ref: '#/components/schemas/OwnerCreate'
     get:
-      operationId: owner_list
+      operationId: OwnerResources_list
       description: Lists all instances of the resource.
       parameters: []
       responses:
@@ -170,10 +170,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
       tags:
-        - owner
-  /owner/{id}:
+        - Owner
+  /Owner/{id}:
     get:
-      operationId: owner_get
+      operationId: OwnerResources_get
       description: Gets an instance of the resource.
       parameters:
         - $ref: '#/components/parameters/OwnerKey'
@@ -191,9 +191,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
       tags:
-        - owner
+        - Owner
     patch:
-      operationId: owner_update
+      operationId: OwnerResources_update
       description: Updates an existing instance of the resource.
       parameters:
         - $ref: '#/components/parameters/OwnerKey'
@@ -211,7 +211,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
       tags:
-        - owner
+        - Owner
       requestBody:
         required: true
         content:
@@ -219,7 +219,7 @@ paths:
             schema:
               $ref: '#/components/schemas/OwnerUpdate'
     delete:
-      operationId: owner_delete
+      operationId: OwnerResources_delete
       description: Deletes an existing instance of the resource.
       parameters:
         - $ref: '#/components/parameters/OwnerKey'
@@ -233,7 +233,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
       tags:
-        - owner
+        - Owner
 components:
   parameters:
     DogKey:

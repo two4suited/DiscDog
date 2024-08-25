@@ -14,10 +14,10 @@ using TypeSpec.Rest;
 
 namespace DiscDog;
 
-@tag("owner")
+@tag("Owner")
 @autoRoute
-interface owner extends Resource.ResourceOperations<Owner,Error> {}
+interface OwnerResources extends Resource.ResourceOperations<Owner,Error> {}
 
-@tag("dog")
+@tag("Dog")
 @autoRoute
-interface dog extends Resource.ResourceOperations<Dog,Error> {}
+interface DogResources extends Resource.ResourceOperations<Dog,Error> {}

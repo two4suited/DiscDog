@@ -12,12 +12,12 @@ using System;
 namespace DiscDog.Client.Dog
 {
     /// <summary>
-    /// Builds and executes requests for operations under \dog
+    /// Builds and executes requests for operations under \Dog
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class DogRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the DiscDog.Client.dog.item collection</summary>
+        /// <summary>Gets an item from the DiscDog.Client.Dog.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DiscDog.Client.Dog.Item.DogItemRequestBuilder"/></returns>
         public global::DiscDog.Client.Dog.Item.DogItemRequestBuilder this[string position]
@@ -34,7 +34,7 @@ namespace DiscDog.Client.Dog
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DogRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dog", pathParameters)
+        public DogRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Dog", pathParameters)
         {
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace DiscDog.Client.Dog
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DogRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dog", rawUrl)
+        public DogRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Dog", rawUrl)
         {
         }
         /// <summary>

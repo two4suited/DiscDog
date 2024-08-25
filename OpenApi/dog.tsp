@@ -5,7 +5,7 @@ import "./error.tsp";
 using TypeSpec.Rest;
 
 model Dog {
-    @segment("dog")
+    @segment("Dog")
     @key
     id: string;
     name: string;
