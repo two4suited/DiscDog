@@ -11,4 +11,8 @@
     <ProjectReference Include="..\DiscDog.Data\DiscDog.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.1.0" />
+  </ItemGroup>
+
 </Project>

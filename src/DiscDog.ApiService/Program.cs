@@ -1,8 +1,10 @@
+using DiscDog.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire components.
 builder.AddServiceDefaults();
-
+builder.AddNpgsqlDbContext<DiscDogContext>("DiscDogDb");
 // Add services to the container.
 builder.Services.AddProblemDetails();
 
